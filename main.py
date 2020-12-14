@@ -25,7 +25,7 @@ def save_file(pair):
     if not os.path.exists(results_dir):
         os.mkdir(results_dir)
 
-    file_name = f"Od {pair[0]} prezent otrzyma"
+    file_name = f"Od {pair[0]} prezent otrzyma.txt"
     with open(f'{results_dir}\\{file_name}', 'w') as f:
         f.write(pair[1])
 
