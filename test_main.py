@@ -43,4 +43,5 @@ def test_mix_names_everyone_get_present(names):
     everyone_has_present = False not in has_present_verification
     everyone_make_present = False not in make_present_verification
     is_everything_perfect= False not in [everyone_has_present, everyone_make_present]
+
     assert is_everything_perfect
