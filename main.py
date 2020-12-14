@@ -5,4 +5,7 @@ def read_names(names_file_name):
             names[name_index] = names[name_index].replace('\n', '')
     return names
 
+
 def mix_names(names):
+    pair1 = [names[0], names[1]]
+    return pair1
