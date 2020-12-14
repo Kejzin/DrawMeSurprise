@@ -27,5 +27,20 @@ def test_mix_names_pairs_different(names):
 
 
 @pytest.mark.parametrize('names', [names_template])
-def test_mix_names_everyone_get_present():
-    pass
+def test_mix_names_everyone_get_present(names):
+    pairs = main.mix_names(names)
+    has_present = []; make_present = []
+    for pair_index in range(len(pairs)):
+        make_present.append(pairs[pair_index][0])
+        has_present.append(pairs[pair_index][1])
+
+    has_present_verification = []; make_present_verification = []
+
+    for name in names:
+        has_present_verification.append(name in make_present)
+        make_present_verification.append(name in has_present)
+
+    everyone_has_present = False not in has_present_verification
+    everyone_make_present = False not in make_present_verification
+    is_everything_perfect= False not in [everyone_has_present, everyone_make_present]
+    assert is_everything_perfect
